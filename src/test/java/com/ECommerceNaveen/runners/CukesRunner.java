@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports"
         },
         features = "src/test/resources/features",
-        glue = "com/ECommereceNaveen/step_definitions",
+        glue = "com/ECommerceNaveen/step_definitions",
         dryRun = false,
         tags = "@wip"
 )

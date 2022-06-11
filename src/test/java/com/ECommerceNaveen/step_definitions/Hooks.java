@@ -1,5 +1,7 @@
 package com.ECommerceNaveen.step_definitions;
 
+import com.ECommerceNaveen.utilities.BrowserUtils;
+import com.ECommerceNaveen.utilities.ConfigurationReader;
 import com.ECommerceNaveen.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -10,8 +12,9 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
 
     @Before
-    public void setUp () throws InterruptedException {
+    public void setUp () {
 
+        Driver.get().manage().window().maximize();
 
 
     }
