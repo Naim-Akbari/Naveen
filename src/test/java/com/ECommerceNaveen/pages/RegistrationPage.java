@@ -5,6 +5,8 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class RegistrationPage extends BasePage {
 
     @FindBy (xpath = "//h1[text()='Register Account']")
@@ -34,6 +36,14 @@ public class RegistrationPage extends BasePage {
     @FindBy (xpath = "//input[@type='submit']")
     public WebElement continueButton;
 
+    @FindBy (xpath = "(//*[text()='Your Account Has Been Created!'])[2]")
+    public WebElement successMessage;
+
+    @FindBy (xpath = "//label[@class='col-sm-2 control-label']")
+    public List<WebElement> asterisks;
+
+    @FindBy (xpath = "//div[@class='text-danger' and contains(text(), 'First Name')]")
+    public WebElement firstNameErrorMessage;
 
     Faker faker = new Faker();
     String firstName = faker.name().firstName();
@@ -54,7 +64,8 @@ public class RegistrationPage extends BasePage {
         agreeCheckBox.click();
         BrowserUtils.waitFor(1);
         continueButton.click();
-        BrowserUtils.waitFor(5);
+        BrowserUtils.waitFor(1);
+
 
     }
 

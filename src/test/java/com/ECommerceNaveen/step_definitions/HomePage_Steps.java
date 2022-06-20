@@ -2,6 +2,7 @@ package com.ECommerceNaveen.step_definitions;
 
 import com.ECommerceNaveen.pages.BasePage;
 import com.ECommerceNaveen.pages.RegistrationPage;
+import com.ECommerceNaveen.utilities.BrowserUtils;
 import com.ECommerceNaveen.utilities.ConfigurationReader;
 import com.ECommerceNaveen.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -9,6 +10,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+
+import java.util.List;
 
 public class HomePage_Steps {
 
@@ -57,6 +61,16 @@ public class HomePage_Steps {
         Assert.assertEquals(expectedURL, Driver.get().getCurrentUrl());
 
     }
+
+    @Then("the slideshow shows different objects")
+    public void the_slideshow_shows_different_objects() {
+        BasePage basePage = new BasePage();
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(basePage.slideShow.isEnabled());
+
+    }
+
+
 
 
 

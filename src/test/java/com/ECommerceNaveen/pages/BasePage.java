@@ -33,6 +33,11 @@ public class BasePage {
     @FindBy (partialLinkText = "Login")
     public WebElement loginButton;
 
+    @FindBy (xpath = "(//div[@data-swiper-slide-index='0'])[2]")
+    public WebElement slideShow;
+
+
+
     public void clickonElement(String webElementToBeClicked){
 
         Driver.get().findElement(By.partialLinkText(webElementToBeClicked)).click();
